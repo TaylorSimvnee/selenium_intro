@@ -14,15 +14,18 @@ public class _01_Validate_Apple_Title {
         2. Validate the title of the page is displayed as "Apple"
          */
 
+        //Selenium is a tool to automate browsers
+
+
         //1. Set up Driver
-        System.setProperty("webdriver.chrome.driver", "/Users/taylorsimone/IdeaProjects/selenium_intro/chromedriver");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        System.setProperty("webdriver.chrome.driver", "/Users/taylorsimone/IdeaProjects/selenium_intro/chromedriver"); //Tells where my executable driver is
+        WebDriver driver = new ChromeDriver(); //launch browser
+        driver.manage().window().maximize(); // maximize browser to ensure test gives accurate results
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); // gives a wait up to (30, seconds)
 
 
         //2. Validation
-        driver.get("https://www.apple.com");
+        driver.get("https://www.apple.com"); //navigates into application
         if (driver.getTitle().equals("Apple")) System.out.println("Apple title validation PASSED");
         else System.out.println("Apple title validation FAILED");
 
